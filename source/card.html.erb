@@ -1,0 +1,120 @@
+---
+title: Card page
+---
+
+<header class="container mb-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Backers of Hate</h1>
+    </div>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row my-2">
+    <div class="col-6">
+      <img class="img-fluid" src="/images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
+    </div>
+    <div class="col-6">
+      <h3>Backs Hate</h3>
+    </div>
+    <div class="col-12 mt-4">
+      <ul>
+        <% data.companies[0].evidence.each do |e| %>
+        <li><%= e %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row py-4 bg-inverse text-white">
+    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg">Send an email</a></div>
+  </div>
+
+  <div class="row bg-faded py-4">
+    <div class="col-12">
+      <h1>Profit Model</h1>
+      <p class="text-center"><%= data.companies[0].profit %></p>
+    </div>
+  </div>
+
+  <div class="row py-4">
+    <div class="col-12">
+      <h1>Ties to Administration</h1>
+      <% data.companies[0].ties.each do |e| %>
+      <p><%= e %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row py-4 bg-inverse text-white">
+    <div class="col-6">
+      <img class="img-fluid" src="/images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
+    </div>
+    <div class="col-6">
+      <h1><%= data.companies[0].ceo %></h1>
+    </div>
+    <div class="col-12 mt-4 text-center"><a href="#email" class="btn btn-primary btn-lg">Send an email</a></div>
+  </div>
+
+  <div class="row py-4">
+    <div class="col-12">
+      <h1>Our Demands</h1>
+      <ol>
+        <% data.companies[0].demands.each do |e| %>
+        <li><%= e %></li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row bg-faded py-4">
+    <div class="col-12">
+      <h1>Board of Directors</h1>
+      <div class="row mt-4">
+      <% data.companies[0].board.each_with_index do |b,i| %>
+        <div class="col-6">
+          <h3><%= b.name %></h3>
+          <p><small><%= b.position %></small></p>
+        </div>
+        <% if (i + 1) % 2 == 0 %>
+      </div>
+      <div class="row">
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row py-4 bg-inverse text-white">
+    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg">Send an email</a></div>
+  </div>
+
+  <div class="row py-4">
+    <div class="col-12">
+      <h1>Who's Next?</h1>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <img class="img-thumbnail" src="/images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
+      </div>
+      <div class="col-6">
+        <img class="img-thumbnail" src="/images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+      </div>
+    </div>
+  </div>
+
+  <div class="row bg-faded py-4">
+    <div class="col-12 text-center">
+      <p>Like our site? Keep it going.</p>
+      <a href="#donate" class="btn btn-primary btn-lg">make a donation today</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Backers of Hate 2017</p>
+  </footer>
+</div> <!-- /container -->

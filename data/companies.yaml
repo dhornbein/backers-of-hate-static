@@ -3,6 +3,10 @@
   url: card.html
   logo: ibm.png
   summery: CEO on Trump's Business Council; immigration enforcement contractor; refused to condemn Muslim and refugee ban.
+  evidence:
+    - CEO on Trump's Business Council
+    - Immigration enforcement contractor
+    - Refused to condemn Muslim and refugee ban
   ceo: Virginia “Ginni” Rometty
   board:
     - name: Kenneth I. Chenault
@@ -32,8 +36,7 @@
   ties:
     - Despite thousands of IBM employees' outrage, CEO Ginni Rometty maintains close to the Trump administration, serving on his Strategic and Policy Forum and advising the administration.
     - In response to Trump's Muslim and refugee ban, over 100 technology companies signed a legal brief voicing support for the federal lawsuit against the Executive Order. IBM did not sign the brief.
-  profit:
-    - IBM has received $1.7 billion in contracts from Immigration Customs (ICE) and Enforcement and Customs and Border Protection to support harsh enforcement activities. Will they now bid on Trump's enforcement ramp-up?
+  profit: IBM has received $1.7 billion in contracts from Immigration Customs (ICE) and Enforcement and Customs and Border Protection to support harsh enforcement activities. Will they now bid on Trump's enforcement ramp-up?
   demands:
     - Withdraw from Trump's Business Council;
     - Issue a clear statement denouncing Trump's anti-immigrant, -refugee, and -Muslim agenda; and
