@@ -15,11 +15,11 @@ title: Home page
   <% data.companies.each_with_index do |c,i| %>
     <div class="col-md-4">
       <div class="card">
-        <img class="card-img-top" src="/images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
+        <img class="card-img-top" src="images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
         <div class="card-block">
           <h4 class="card-title"><%= c.name %></h4>
           <p class="card-text"><%= c.summery %></p>
-          <a href="/<%= c.url %>" class="btn btn-primary">Learn more</a>
+          <a href="<%= c.url %>" class="btn btn-primary">Learn more</a>
         </div>
       </div>
     </div>
