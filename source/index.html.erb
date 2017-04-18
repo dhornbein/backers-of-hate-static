@@ -1,38 +1,42 @@
 ---
 title: Home page
+lead:
 ---
 
 <header class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-12">
       <h1>Backers of Hate</h1>
     </div>
   </div>
 </header>
 
 <div class="container">
+  <div class="row justify-content-center py-4">
+    <div class="col-12 col-md-6">
+      <p class="lead">One short sentence here about why this is happening and what goes on once blah blah blah</p>
+    </div>
+  </div>
   <div class="row">
   <% data.companies.each_with_index do |c,i| %>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
-        <div class="card-block">
-          <h4 class="card-title"><%= c.name %></h4>
-          <p class="card-text"><%= c.summery %></p>
-          <a href="<%= c.url %>" class="btn btn-primary">Learn more</a>
-        </div>
+    <div class="col-12 col-md-4 business-card">
+      <div class="logo">
+        <img class="img-fluid" src="images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
       </div>
+      <p class="my-4"><%= c.summery %></p>
+      <a href="<%= c.url %>" class="btn btn-primary">Learn more</a>
     </div>
     <% if (i + 1) % 3 == 0 %>
   </div><div class="row">
     <% end %>
   <% end %>
   </div>
-</div>
-
-  <hr>
-
-  <footer>
-    <p>&copy; Backers of Hate 2017</p>
-  </footer>
 </div> <!-- /container -->
+
+<footer>
+  <div class="container">
+    <div class="col-12 text-center">
+      <p>Like our site? Keep it going. <a href="#donate" class="btn btn-outline-primary">Make a Donation Today</a></p>
+    </div>
+  </div>
+</footer>

@@ -1,11 +1,34 @@
+@import "variables";
 @import "bootstrap-custom";
+
+// Utility
+
+.bg-gold {
+  background-color: $gold;
+}
 
 // Home page
 
-// Cards
+.business-card {
+  margin-top: $grid-gutter-width-base / 2;
+  margin-bottom: $grid-gutter-width-base / 2;
+  .logo {
+    background-color: $gold;
+    padding: 3em;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 2.5em;
+    .btn {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
 
-.card-img-top {
-    padding: 25px;
-    width: 100%;
-    height: auto;
+// Footer
+
+body > footer {
+  background-color: $gold;
+  margin-top: $grid-gutter-width-base / 2;
+  padding: 3em 0;
 }
