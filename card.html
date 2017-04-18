@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title>Card page</title>
     <link href="stylesheets/site.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
     <header class="container mb-4">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Backers of Hate</h1>
+      <h1><a href="index.html">Backers of Hate</a></h1>
     </div>
   </div>
 </header>
@@ -38,7 +38,16 @@
   </div>
 
   <div class="row py-4 bg-inverse text-white">
-    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg">Send an email</a></div>
+    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg" data-toggle="collapse" aria-controls="collapseExample">Send an email</a></div>
+  </div>
+
+  <div class="row py-4 collapse" id="email">
+    <div class="col-12">
+      <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
+      <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
+      <script src='https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate?format=js&source=widget'></script>
+      <div id='can-letter-area-send-a-letter-to-corporate-backers-of-hate' style='width: 100%'></div>
+    </div>
   </div>
 
   <div class="row bg-faded py-4">
@@ -152,13 +161,13 @@
   <div class="row py-4">
     <div class="col-12">
       <h1>Who's Next?</h1>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <img class="img-thumbnail" src="images/logos/ibm.png" alt="Devil inc. logo">
-      </div>
-      <div class="col-6">
-        <img class="img-thumbnail" src="images/logos/ibm.png" alt="JP Morgan logo">
+      <div class="row">
+        <div class="col-6">
+          <img class="img-thumbnail" src="images/logos/ibm.png" alt="Devil inc. logo">
+        </div>
+        <div class="col-6">
+          <img class="img-thumbnail" src="images/logos/ibm.png" alt="JP Morgan logo">
+        </div>
       </div>
     </div>
   </div>
