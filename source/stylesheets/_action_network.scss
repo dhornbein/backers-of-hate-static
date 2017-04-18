@@ -1,0 +1,44 @@
+
+// Letter writing
+.can_embed {
+  h2.line {}
+  h4 {
+    @extend .h5;
+  }
+
+  form {
+    overflow: hidden;
+
+    textarea,
+    input[type="email"],
+    input[type="text"] {
+      margin-bottom: $spacer-y;
+      @extend .form-control;
+      &.required {}
+      &.error_input {
+        border-color: $brand-danger;
+      }
+    }
+    // Starts hidden
+    .country_drop_wrap {
+      display: none;
+      span.block { position: relative; }
+      .can_select,
+      .can_selectInner {
+        width: 100% !important;
+      }
+      span.can_select {
+        margin-bottom: $spacer-y;
+        @extend .custom-select;
+      }
+    }
+    input[type="submit"] {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .btn-block;
+    }
+  }
+
+  .action_owner {}
+  #logo_wrap {}
+}
