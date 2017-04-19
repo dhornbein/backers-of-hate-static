@@ -2,60 +2,71 @@
 $tan-spacer: $spacer-y;
 $tan-textarea-height: 150px;
 
-// Letter writing
+// TAN Form layout
 .can_embed {
   h2.line {}
   h4 {
     @extend .h5;
   }
 
-  form {
-    overflow: hidden;
+  form#new_delivery {}
+  form#letter-form {}
 
-    textarea {
-      min-height: $tan-textarea-height;
-    }
+  #form_col1 {}
+  #form_col2 {}
 
-    textarea,
-    input[type="email"],
-    input[type="text"] {
-      margin-bottom: $tan-spacer;
-      @extend .form-control;
-      &.required {}
-      &.error_input {
-        border-color: $brand-danger;
-      }
-    }
-    // Starts hidden
-    .country_drop_wrap {
-      display: none;
-      span.block { position: relative; }
-      .can_select,
-      .can_selectInner {
-        width: 100% !important;
-      }
-      span.can_select {
-        margin-bottom: $tan-spacer;
-        @extend .custom-select;
-      }
-    }
-    input[type="submit"] {
-      cursor: pointer;
-      @extend .btn;
-      @extend .btn-primary;
-      @extend .btn-block;
-    }
-  }
-
-  #d_sharing {
-    ul {
-      list-style: none;
-      li:last-of-type { display: none; }
-    }
-  }
-
-  .action_owner {
-    div.action_info_user:first-child { display: none; }
-  }
   #logo_wrap {}
+}
+
+// TAN Form style
+.can_embed form {
+  overflow: hidden;
+
+  textarea {
+    min-height: $tan-textarea-height;
+  }
+
+  textarea,
+  input[type="email"],
+  input[type="text"] {
+    margin-bottom: $tan-spacer;
+    @extend .form-control;
+    &.required {}
+    &.error_input {
+      border-color: $brand-danger;
+    }
+  }
+
+  .country_wrap {
+    margin-bottom: $tan-spacer;
+  }
+
+  .international_link {
+    color: $link-color;
+    cursor: pointer;
+    text-decoration: $link-decoration;
+    @include hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+
+  .country_drop_wrap {
+    display: none;
+    span.block { position: relative; }
+    .can_select,
+    .can_selectInner {
+      width: 100% !important;
+    }
+    span.can_select {
+      @extend .custom-select;
+    }
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-block;
+  }
 }

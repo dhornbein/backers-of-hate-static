@@ -2,7 +2,9 @@
 title: Card page
 callToActionBtnText: Give em hell
 submitText: Give em hell
-canURL: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate
+canURL:
+  letter: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate
+  petition: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
 ---
 
 <header class="container mb-4">
@@ -39,7 +41,7 @@ canURL: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-b
     <div class="col-12">
       <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
       <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
-      <script src='<%= current_page.data.canURL %>?format=js&source=widget&can_widget_id=embedForm'></script>
+      <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
       <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
     </div>
   </div>
