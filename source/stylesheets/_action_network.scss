@@ -1,4 +1,7 @@
 
+$tan-spacer: $spacer-y;
+$tan-textarea-height: 150px;
+
 // Letter writing
 .can_embed {
   h2.line {}
@@ -9,10 +12,14 @@
   form {
     overflow: hidden;
 
+    textarea {
+      min-height: $tan-textarea-height;
+    }
+
     textarea,
     input[type="email"],
     input[type="text"] {
-      margin-bottom: $spacer-y;
+      margin-bottom: $tan-spacer;
       @extend .form-control;
       &.required {}
       &.error_input {
@@ -28,17 +35,27 @@
         width: 100% !important;
       }
       span.can_select {
-        margin-bottom: $spacer-y;
+        margin-bottom: $tan-spacer;
         @extend .custom-select;
       }
     }
     input[type="submit"] {
+      cursor: pointer;
       @extend .btn;
       @extend .btn-primary;
       @extend .btn-block;
     }
   }
 
-  .action_owner {}
+  #d_sharing {
+    ul {
+      list-style: none;
+      li:last-of-type { display: none; }
+    }
+  }
+
+  .action_owner {
+    div.action_info_user:first-child { display: none; }
+  }
   #logo_wrap {}
 }
