@@ -19,3 +19,7 @@ deploy:
   skip_cleanup: true
   local_dir: build
   acl: public_read
+
+notifications:
+  webhooks:
+  - https://webhooks.datocms.com/5854778df6f7956d99ff/deploy-results
