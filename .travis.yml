@@ -1,6 +1,9 @@
+before_install:
+- rvm install 2.3.1
+
 language: ruby
 rvm:
-  - 2.2
+  - 2.3.1
 
 deploy:
   provider: s3
