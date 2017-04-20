@@ -1,0 +1,38 @@
+$sspacer: $spacer * 2;
+
+section.row {
+  padding-top: $sspacer;
+  padding-bottom: $sspacer;
+}
+
+section.title {
+  @include media-breakpoint-down(md) {
+    h1 {
+      margin-top: $sspacer;
+      text-align: center;
+    }
+  }
+}
+
+.evidence-wrapper {
+  .item {
+    margin-bottom: $sspacer;
+  }
+  .evidence {
+    position: initial;
+    @extend .left-block;
+    @extend h2;
+    color: $dark-gray-text;
+    padding: 1em;
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+.profit-model-title {
+  text-align: center;
+  &:before,
+  &:after {
+    content: " $ ";
+  }
+}

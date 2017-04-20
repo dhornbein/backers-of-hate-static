@@ -1,10 +1,13 @@
 ---
 title: Card page
+titles:
+ profit_model: Profit Model
 callToActionBtnText: Give em hell
 submitText: Give em hell
 canURL:
   letter: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate
   petition: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
+emailLead: Let them know how you feel
 ---
 
 <header class="container mb-4">
@@ -17,52 +20,55 @@ canURL:
 
 
 <div class="container">
-  <div class="row my-2">
-    <div class="col-6">
+  <section class="row title">
+    <div class="col-md-6">
       <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
     </div>
-    <div class="col-6">
-      <h3>Backs Hate</h3>
+    <div class="col-md-6">
+      <h1 class="text-md-left">Backs Hate</h1>
     </div>
     <div class="col-12 mt-4">
-      <ul>
-        <% data.companies[0].evidence.each do |e| %>
-        <li><%= e %></li>
-        <% end %>
-      </ul>
+        <div class="row evidence-wrapper">
+          <% data.companies[0].evidence.each do |e| %>
+          <div class="col-md item"><p class="evidence"><%= e %></p></div>
+          <% end %>
+        </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row py-4 bg-inverse text-white">
-    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a></div>
-  </div>
+  <section class="row bg-grey-grade">
+    <div class="col-12 text-center">
+      <p class="lead"><%= current_page.data.emailLead %></p>
+      <a href="#email" class="btn btn-primary" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a>
+    </div>
+  </section>
 
-  <div class="row py-4 " id="email">
+  <section class="row collapse" id="email">
     <div class="col-12">
       <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
       <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
       <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
       <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
     </div>
-  </div>
+  </section>
 
-  <div class="row bg-faded py-4">
+  <section class="row gradiant-lightgray">
     <div class="col-12">
-      <h1>Profit Model</h1>
-      <p class="text-center"><%= data.companies[0].profit %></p>
+      <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
+      <p class="text-justify"><%= data.companies[0].profit %></p>
     </div>
-  </div>
+  </section>
 
-  <div class="row py-4">
+  <section class="row">
     <div class="col-12">
       <h1>Ties to Administration</h1>
       <% data.companies[0].ties.each do |e| %>
-      <p><%= e %></p>
+      <p class="left-block-dark"><%= e %></p>
       <% end %>
     </div>
-  </div>
+  </section>
 
-  <div class="row py-4 bg-inverse text-white">
+  <section class="row bg-inverse text-white">
     <div class="col-6">
       <img class="img-fluid" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
     </div>
@@ -70,9 +76,9 @@ canURL:
       <h1><%= data.companies[0].ceo %></h1>
     </div>
     <div class="col-12 mt-4 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
-  </div>
+  </section>
 
-  <div class="row py-4">
+  <section class="row">
     <div class="col-12">
       <h1>Our Demands</h1>
       <ol>
@@ -81,15 +87,15 @@ canURL:
         <% end %>
       </ol>
     </div>
-  </div>
+  </section>
 
-  <div class="row bg-faded py-4">
+  <section class="row">
     <div class="col-12">
       <h1>Board of Directors</h1>
       <div class="row mt-4">
       <% data.companies[0].board.each_with_index do |b,i| %>
         <div class="col-6">
-          <h3><%= b.name %></h3>
+          <h2 class="name"><%= b.name %></h2>
           <p><small><%= b.position %></small></p>
         </div>
         <% if (i + 1) % 2 == 0 %>
@@ -99,13 +105,13 @@ canURL:
       <% end %>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row py-4 bg-inverse text-white">
+  <section class="row">
     <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
-  </div>
+  </section>
 
-  <div class="row py-4">
+  <section class="row">
     <div class="col-12">
       <h1>Who's Next?</h1>
       <div class="row">
@@ -117,18 +123,12 @@ canURL:
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row bg-faded py-4">
+  <section class="row">
     <div class="col-12 text-center">
       <p>Like our site? Keep it going.</p>
       <a href="#donate" class="btn btn-primary btn-lg">make a donation today</a>
     </div>
-  </div>
-
-  <hr>
-
-  <footer>
-    <p>&copy; Backers of Hate 2017</p>
-  </footer>
+  </section>
 </div> <!-- /container -->

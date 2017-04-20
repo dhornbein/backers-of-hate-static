@@ -1,0 +1,63 @@
+.gradiant-lightgray { background-image: linear-gradient(0deg, #EDF1F4 1%, #FFFFFF 100%); }
+.gradiant-gray { background-image: linear-gradient(-269deg, #CBC9D4 1%, #A8A7AC 48%, #CBC9D4 96%); }
+.gradiant-gray-y { background-image: linear-gradient(0deg, #CBC9D4 1%, #A8A7AC 96%); }
+.gradiant-gold { background-image: linear-gradient(0deg, #EABF57 0%, #F3D98E 100%); }
+.nav-bar { background-image: linear-gradient(-180deg, #A8A7AC 2%, #C2C0CB 100%); }
+
+p {
+  letter-spacing: $font-letter-spacing;
+}
+
+h1, .h1 {
+  font-family: $font-playfair;
+  font-weight: bold;
+  color: $gray-dark;
+  @include media-breakpoint-up(lg) {
+    font-size: 4em;
+  }
+}
+
+.name {
+  font-family: $font-montserrat;
+  font-size: 1.5rem;
+  color: $gray-dark;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  @extend .gradiant-gold;
+  font-family: $font-montserrat;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #D4AD4E;
+  letter-spacing: 0.87px;
+  &:focus {
+    color: $white;
+  }
+}
+
+.left-block {
+  padding-left: 1em;
+  position: relative;
+  &:before {
+    @extend .gradiant-lightgray;
+    content: "";
+    width: .5em;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+}
+
+.left-block-dark {
+  @extend .left-block;
+  &:before {
+    @extend .gradiant-gray-y;
+  }
+}
+
+.bg-grey-grade {
+  @extend .gradiant-gray;
+  color: $white;
+}
