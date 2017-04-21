@@ -112,3 +112,21 @@ h1, .h1 {
     color: $white;
   };
 }
+
+.btn-social {
+  @extend .btn-primary;
+  display: block;
+  width: 100%;
+  .svg {
+    position: absolute;
+    width: 40px;
+    left: 1em;
+    top: .5rem;
+  }
+  svg {
+    height: 100%;
+    width: 100%;
+    color: $dark-gold;
+    fill: $dark-gold;
+  }
+}
