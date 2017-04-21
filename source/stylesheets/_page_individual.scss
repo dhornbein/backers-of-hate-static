@@ -15,25 +15,31 @@ section.title {
 }
 
 .evidence-wrapper {
-  .item {
-    margin-bottom: $spacer;
-    margin-top: $spacer;
-  }
   .evidence {
     position: initial;
     @extend .left-block;
     @extend h2;
     color: $dark-gray-text;
-    padding: 1em;
+    padding: 0.5em 0em 0.5em 1em;
     margin: 0;
     font-style: italic;
+  }
+  @include media-breakpoint-down(md) {
+    .item {
+      margin-bottom: $spacer / 2;
+      margin-top: $spacer / 2;
+      &:first-child { margin-top: 0; }
+      &:last-child { margin-bottom: 0; }
+    }
   }
 }
 
 .profit-model-title {
   text-align: center;
-  &:before,
-  &:after {
-    content: " $ ";
+  @include media-breakpoint-up(sm){
+    &:before,
+    &:after {
+      content: " $ ";
+    }
   }
 }

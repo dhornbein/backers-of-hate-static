@@ -16,6 +16,12 @@ p {
   letter-spacing: $font-letter-spacing;
 }
 
+@include media-breakpoint-up(md) {
+  .font-small-lg {
+    font-size: 85%;
+  }
+}
+
 h1, .h1 {
   color: $gray-dark;
   font-family: $font-playfair;
@@ -23,6 +29,32 @@ h1, .h1 {
   margin-bottom: $spacer * 2;
   @include media-breakpoint-up(lg) {
     font-size: 4em;
+  }
+}
+
+.underline {
+  padding-bottom: 1rem;
+  border-bottom: 4px $double-line double;
+  display: inline-block;
+}
+
+@include media-breakpoint-up(md) {
+.underline-md {
+    padding-bottom: 1rem;
+    border-bottom: 4px $double-line double;
+    display: inline-block;
+  }
+}
+
+.sideline {
+  &:before {
+    content: "";
+    border-bottom: 4px $double-line double;
+    position: absolute;
+    top:50%;
+    top: calc(50% - 4px);
+    left:0;
+    width: 100%;
   }
 }
 

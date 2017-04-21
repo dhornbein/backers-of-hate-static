@@ -20,7 +20,7 @@ emailLead: Let them know how you feel
       <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
     </div>
     <div class="col-md-6">
-      <h1 class="text-md-left">Backs Hate</h1>
+      <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
     </div>
     <div class="col-12 mt-4">
         <div class="row evidence-wrapper">
@@ -45,7 +45,13 @@ emailLead: Let them know how you feel
   <section class="row bg-grade-lightgray">
     <div class="col-12">
       <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
-      <p class="text-justify"><%= data.companies[0].profit %></p>
+      <div class="row justify-content-center">
+        <div class="hidden-md-down col-lg-2 sideline"></div>
+        <div class="col-12 col-lg-8">
+          <p class="text-justify"><%= data.companies[0].profit %></p>
+        </div>
+        <div class="hidden-md-down col-lg-2 sideline"></div>
+      </div>
     </div>
   </section>
 
@@ -66,12 +72,14 @@ emailLead: Let them know how you feel
     <div class="col-12 mt-4 "><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
   </section>
 
-  <section class="row ">
-    <div class="col-12">
-      <h1 class="ellipsis">Our Demands</h1>
+  <section class="row bg-grade-lightgray">
+    <div class="col-12 col-lg-6">
+      <h1 class="underline-md ellipsis">Our Demands</h1>
+    </div>
+    <div class="col-12 col-lg-6">
       <ol>
         <% data.companies[0].demands.each do |e| %>
-        <li class="mb-2"><%= e %></li>
+        <li><p><%= e %></p></li>
         <% end %>
       </ol>
     </div>
@@ -80,13 +88,13 @@ emailLead: Let them know how you feel
   <section class="row">
     <div class="col-12">
       <h1>Board of Directors</h1>
-      <div class="row mt-4">
+      <div class="row">
       <% data.companies[0].board.each_with_index do |b,i| %>
-        <div class="col-6 col-lg-4">
+        <div class="col-6 col-lg-3">
           <h2 class="name"><%= b.name %></h2>
-          <p><%= b.position %></p>
+          <p class="font-small-lg"><%= b.position %></p>
         </div>
-        <% if (i + 1) % 2 == 0 %>
+        <% if (i + 1) % 4 == 0 %>
       </div>
       <div class="row">
         <% end %>
@@ -99,7 +107,7 @@ emailLead: Let them know how you feel
 
   <section class="row">
     <div class="col-12">
-      <h1>Who's Next?</h1>
+      <h1 class="text-center">Who's Next?</h1>
       <div class="row">
         <div class="col-6">
           <img class="img-thumbnail" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
@@ -110,7 +118,7 @@ emailLead: Let them know how you feel
       </div>
     </div>
   </section>
-  
+
 </div> <!-- /container -->
 
 <%= partial "includes/footer" %>
