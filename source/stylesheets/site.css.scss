@@ -8,28 +8,42 @@
   text-align: center;
 }
 
+$nav-grade-1: #A9A7AC;
+$nav-grade-2: #C3BFCA;
+
 .navbar {
-  padding: 0;
+  background-image: linear-gradient(180deg, $nav-grade-1 0%, $nav-grade-2 100%);
+  min-height: 2.5rem;
+  .navbar-toggler {
+    cursor: pointer;
+    color: $white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -0.5px -0.5px 0.5px rgba(#000,.25);
+    width: 100%;
+    .navbar-toggler-icon { float:right; }
+  }
 }
 
 .navbar-nav {
   margin: 0 auto;
   .nav-item{
-    border-width: 0 1px;
+    border-width: 0 1px 0 0;
     border-style: solid;
-    border-color: #c7c6cc;
+    border-color: #B8BDC0;
     display: inline-block;
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     float: inherit;
-    letter-spacing: 0.45px;
+    letter-spacing: 1px;
+    padding: 1rem;
+    text-align: center;
     text-transform: uppercase;
-    text-shadow: -1px -1px 1px rgba(#000,.25);
+    text-shadow: -0.5px -0.5px 0.5px rgba(#000,.25);
     &:first-child {
-      border-left-width: 2px;
-    }
-    &:last-child {
-      border-right-width: 2px;
+      border-left-width: 1px;
     }
   }
 }
