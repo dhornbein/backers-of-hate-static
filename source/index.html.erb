@@ -3,13 +3,9 @@ title: Home page
 lead:
 ---
 
-<header class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Backers of Hate</h1>
-    </div>
-  </div>
-</header>
+<%= partial "includes/header" %>
+
+<%= partial "includes/nav" %>
 
 <div class="container">
   <div class="row justify-content-center py-4">
@@ -33,10 +29,4 @@ lead:
   </div>
 </div> <!-- /container -->
 
-<footer>
-  <div class="container">
-    <div class="col-12 text-center">
-      <p>Like our site? Keep it going. <a href="#donate" class="btn btn-outline-primary">Make a Donation Today</a></p>
-    </div>
-  </div>
-</footer>
+<%= partial "includes/footer" %>

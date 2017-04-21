@@ -10,14 +10,9 @@ canURL:
 emailLead: Let them know how you feel
 ---
 
-<header class="container mb-4">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1><a href="index.html">Backers of Hate</a></h1>
-    </div>
-  </div>
-</header>
+<%= partial "includes/header" %>
 
+<%= partial "includes/nav" %>
 
 <div class="container">
   <section class="row title">
@@ -100,9 +95,7 @@ emailLead: Let them know how you feel
     </div>
   </section>
 
-  <section class="row">
-    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
-  </section>
+  <%= partial "includes/cta_section" %>
 
   <section class="row">
     <div class="col-12">
@@ -117,11 +110,7 @@ emailLead: Let them know how you feel
       </div>
     </div>
   </section>
-
-  <section class="row">
-    <div class="col-12 text-center">
-      <p>Like our site? Keep it going.</p>
-      <a href="#donate" class="btn btn-primary btn-lg">make a donation today</a>
-    </div>
-  </section>
+  
 </div> <!-- /container -->
+
+<%= partial "includes/footer" %>
