@@ -36,12 +36,7 @@ emailLead: Let them know how you feel
     </div>
   </section>
 
-  <section class="row bg-grey-grade">
-    <div class="col-12 text-center">
-      <p class="lead"><%= current_page.data.emailLead %></p>
-      <a href="#email" class="btn btn-primary" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a>
-    </div>
-  </section>
+  <%= partial "includes/cta_section" %>
 
   <section class="row collapse" id="email">
     <div class="col-12">
@@ -52,7 +47,7 @@ emailLead: Let them know how you feel
     </div>
   </section>
 
-  <section class="row gradiant-lightgray">
+  <section class="row bg-grade-lightgray">
     <div class="col-12">
       <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
       <p class="text-justify"><%= data.companies[0].profit %></p>
@@ -68,22 +63,20 @@ emailLead: Let them know how you feel
     </div>
   </section>
 
-  <section class="row bg-inverse text-white">
-    <div class="col-6">
-      <img class="img-fluid" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
-    </div>
-    <div class="col-6">
+  <section class="row bg-grade-gray">
+    <div class="col-12">
+      <img class="img-thumbnail float-left mr-4" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
       <h1><%= data.companies[0].ceo %></h1>
     </div>
-    <div class="col-12 mt-4 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
+    <div class="col-12 mt-4 "><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
   </section>
 
-  <section class="row">
+  <section class="row ">
     <div class="col-12">
-      <h1>Our Demands</h1>
+      <h1 class="ellipsis">Our Demands</h1>
       <ol>
         <% data.companies[0].demands.each do |e| %>
-        <li><%= e %></li>
+        <li class="mb-2"><%= e %></li>
         <% end %>
       </ol>
     </div>
@@ -94,9 +87,9 @@ emailLead: Let them know how you feel
       <h1>Board of Directors</h1>
       <div class="row mt-4">
       <% data.companies[0].board.each_with_index do |b,i| %>
-        <div class="col-6">
+        <div class="col-6 col-lg-4">
           <h2 class="name"><%= b.name %></h2>
-          <p><small><%= b.position %></small></p>
+          <p><%= b.position %></p>
         </div>
         <% if (i + 1) % 2 == 0 %>
       </div>

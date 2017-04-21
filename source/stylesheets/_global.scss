@@ -1,4 +1,12 @@
-.gradiant-lightgray { background-image: linear-gradient(0deg, #EDF1F4 1%, #FFFFFF 100%); }
+@mixin headers {
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    @content;
+  }
+
+}
+
+.bg-grade-lightgray { background-image: linear-gradient(0deg, #EDF1F4 1%, #FFFFFF 100%); }
 .gradiant-gray { background-image: linear-gradient(-269deg, #CBC9D4 1%, #A8A7AC 48%, #CBC9D4 96%); }
 .gradiant-gray-y { background-image: linear-gradient(0deg, #CBC9D4 1%, #A8A7AC 96%); }
 .gradiant-gold { background-image: linear-gradient(0deg, #EABF57 0%, #F3D98E 100%); }
@@ -9,19 +17,27 @@ p {
 }
 
 h1, .h1 {
+  color: $gray-dark;
   font-family: $font-playfair;
   font-weight: bold;
-  color: $gray-dark;
+  margin-bottom: $spacer * 2;
   @include media-breakpoint-up(lg) {
     font-size: 4em;
   }
 }
 
+.ellipsis {
+  &:after {
+    content: "\2026"
+  }
+}
+
 .name {
+  color: $gray-dark;
   font-family: $font-montserrat;
   font-size: 1.5rem;
-  color: $gray-dark;
   letter-spacing: 0.15px;
+  margin-top: $spacer;
   text-transform: uppercase;
 }
 
@@ -40,7 +56,7 @@ h1, .h1 {
   padding-left: 1em;
   position: relative;
   &:before {
-    @extend .gradiant-lightgray;
+    @extend .bg-grade-lightgray;
     content: "";
     width: .5em;
     height: 100%;
@@ -57,7 +73,10 @@ h1, .h1 {
   }
 }
 
-.bg-grey-grade {
+.bg-grade-gray {
   @extend .gradiant-gray;
   color: $white;
+  @include headers{
+    color: $white;
+  };
 }
