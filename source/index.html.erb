@@ -1,6 +1,11 @@
 ---
 title: Home page
-lead:
+summery: One short sentence here about why this is happening and what goes on once blah blah blah
+callToActionBtnText: Give em hell
+share:
+  facebook: This is the facebook share text
+  twitter_text: This is the twitter share text
+  twitter_via: twitter_handle
 ---
 
 <%= partial "includes/header" %>
@@ -9,9 +14,11 @@ lead:
 
 <div class="container">
   <div class="row justify-content-center py-4">
-    <div class="col-12 col-md-6">
-      <p class="lead">One short sentence here about why this is happening and what goes on once blah blah blah</p>
+    <div class="hidden-sm-down col-md-2 sideline"></div>
+    <div class="col-12 col-md-8">
+      <h2 class="font-italic"><%= current_page.data.summery %></h2>
     </div>
+    <div class="hidden-md-down col-lg-2 sideline"></div>
   </div>
   <div class="row">
   <% data.companies.each_with_index do |c,i| %>
@@ -20,7 +27,7 @@ lead:
         <img class="img-fluid" src="images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
       </div>
       <p class="my-4"><%= c.summery %></p>
-      <a href="<%= c.url %>" class="btn btn-primary">Learn more</a>
+      <a href="<%= c.url %>" class="btn btn-primary"><%= current_page.data.callToActionBtnText %></a>
     </div>
     <% if (i + 1) % 3 == 0 %>
   </div><div class="row">
@@ -28,5 +35,7 @@ lead:
   <% end %>
   </div>
 </div> <!-- /container -->
+
+<%= partial "includes/social" %>
 
 <%= partial "includes/footer" %>
