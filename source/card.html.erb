@@ -14,111 +14,142 @@ emailLead: Let them know how you feel
 
 <%= partial "includes/nav" %>
 
-<div class="container">
-  <section class="row title">
-    <div class="col-md-6">
-      <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
+<section class="wrap title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
+      </div>
+      <div class="col-12 mt-4">
+          <div class="row evidence-wrapper">
+            <% data.companies[0].evidence.each do |e| %>
+            <div class="col-md item"><p class="evidence"><%= e %></p></div>
+            <% end %>
+          </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
+  </div>
+</section>
+
+<%= partial "includes/cta_section" %>
+
+<section class="wrap collapse" id="email">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
+        <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
+        <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
+        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
+      </div>
     </div>
-    <div class="col-12 mt-4">
-        <div class="row evidence-wrapper">
-          <% data.companies[0].evidence.each do |e| %>
-          <div class="col-md item"><p class="evidence"><%= e %></p></div>
+  </div>
+</section>
+
+<section class="wrap bg-grade-lightgray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
+        <div class="row justify-content-center">
+          <div class="hidden-md-down col-lg-2 sideline"></div>
+          <div class="col-12 col-lg-8">
+            <p class="text-justify"><%= data.companies[0].profit %></p>
+          </div>
+          <div class="hidden-md-down col-lg-2 sideline"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ties to Administration</h1>
+        <% data.companies[0].ties.each do |e| %>
+        <p class="left-block-dark"><%= e %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap bg-grade-gray">
+  <div class="container">
+    <div class="row text-center text-sm-left">
+      <div class="col-12">
+        <img class="img-thumbnail float-sm-left mr-sm-4 mb-4 mb-sm-0" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
+        <h1><%= data.companies[0].ceo %></h1>
+      </div>
+      <div class="col-12 mt-4 ">
+        <a href="#email" class="btn btn-primary" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap bg-grade-lightgray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h1 class="underline-md ellipsis">Our Demands</h1>
+      </div>
+      <div class="col-12 col-lg-6">
+        <ol>
+          <% data.companies[0].demands.each do |e| %>
+          <li><p><%= e %></p></li>
           <% end %>
-        </div>
-    </div>
-  </section>
-
-  <%= partial "includes/cta_section" %>
-
-  <section class="row collapse" id="email">
-    <div class="col-12">
-      <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
-      <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
-      <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
-      <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
-    </div>
-  </section>
-
-  <section class="row bg-grade-lightgray">
-    <div class="col-12">
-      <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
-      <div class="row justify-content-center">
-        <div class="hidden-md-down col-lg-2 sideline"></div>
-        <div class="col-12 col-lg-8">
-          <p class="text-justify"><%= data.companies[0].profit %></p>
-        </div>
-        <div class="hidden-md-down col-lg-2 sideline"></div>
+        </ol>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="row">
-    <div class="col-12">
-      <h1>Ties to Administration</h1>
-      <% data.companies[0].ties.each do |e| %>
-      <p class="left-block-dark"><%= e %></p>
-      <% end %>
-    </div>
-  </section>
-
-  <section class="row bg-grade-gray">
-    <div class="col-12">
-      <img class="img-thumbnail float-left mr-4" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
-      <h1><%= data.companies[0].ceo %></h1>
-    </div>
-    <div class="col-12 mt-4 "><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
-  </section>
-
-  <section class="row bg-grade-lightgray">
-    <div class="col-12 col-lg-6">
-      <h1 class="underline-md ellipsis">Our Demands</h1>
-    </div>
-    <div class="col-12 col-lg-6">
-      <ol>
-        <% data.companies[0].demands.each do |e| %>
-        <li><p><%= e %></p></li>
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Board of Directors</h1>
+        <div class="row">
+        <% data.companies[0].board.each_with_index do |b,i| %>
+          <div class="col-sm-6 col-lg-3">
+            <h2 class="name"><%= b.name %></h2>
+            <p class="font-small-lg"><%= b.position %></p>
+          </div>
+          <% if (i + 1) % 4 == 0 %>
+        </div>
+        <div class="row">
+          <% end %>
         <% end %>
-      </ol>
-    </div>
-  </section>
-
-  <section class="row">
-    <div class="col-12">
-      <h1>Board of Directors</h1>
-      <div class="row">
-      <% data.companies[0].board.each_with_index do |b,i| %>
-        <div class="col-6 col-lg-3">
-          <h2 class="name"><%= b.name %></h2>
-          <p class="font-small-lg"><%= b.position %></p>
-        </div>
-        <% if (i + 1) % 4 == 0 %>
-      </div>
-      <div class="row">
-        <% end %>
-      <% end %>
-      </div>
-    </div>
-  </section>
-
-  <%= partial "includes/cta_section" %>
-
-  <section class="row">
-    <div class="col-12">
-      <h1 class="text-center">Who's Next?</h1>
-      <div class="row">
-        <div class="col-6">
-          <img class="img-thumbnail" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
-        </div>
-        <div class="col-6">
-          <img class="img-thumbnail" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</div> <!-- /container -->
+<%= partial "includes/cta_section" %>
+
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Who's Next?</h1>
+        <div class="row">
+          <div class="col-6">
+            <img class="img-thumbnail" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
+          </div>
+          <div class="col-6">
+            <img class="img-thumbnail" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <!-- /container -->
 
 <%= partial "includes/footer" %>
