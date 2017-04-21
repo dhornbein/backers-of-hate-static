@@ -4,6 +4,41 @@
 @import "page_home";
 @import "page_individual";
 
+.header {
+  background-image: url('../images/header.jpg');
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  text-align: center;
+  font-size: 4em;
+  height: 250px;
+  @include media-breakpoint-up(md) {
+    height: 400px;
+  }
+  @include media-breakpoint-up(lg) {
+    height: 500px;
+  }
+  
+  .header-title {
+    @include text-hide;
+    background-image: url('../images/header_title.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 250px;
+    margin: 0;
+    height: 100%;
+    @include media-breakpoint-up(sm) {
+      background-size: 300px;
+    }
+    @include media-breakpoint-up(md) {
+      background-size: 400px;
+    }
+    @include media-breakpoint-up(lg) {
+      background-size: 500px;
+    }
+  }
+}
+
 .nav{
   text-align: center;
 }
