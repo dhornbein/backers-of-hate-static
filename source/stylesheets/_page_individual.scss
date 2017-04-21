@@ -1,0 +1,55 @@
+$sspacer: $spacer * 2;
+
+section.wrap {
+  padding-top: $sspacer;
+  padding-bottom: $sspacer;
+  @include media-breakpoint-up(md) {
+    padding-top: $sspacer * 1.5;
+    padding-bottom: $sspacer * 1.5;
+  }
+}
+
+section.title {
+  @include media-breakpoint-down(md) {
+    h1 {
+      margin-top: $sspacer;
+      text-align: center;
+      display: block;
+    }
+  }
+}
+
+.evidence-wrapper {
+  .evidence {
+    position: initial;
+    @extend .left-block;
+    @extend h2;
+    color: $dark-gray-text;
+    padding: 0.5em 0em 0.5em 1em;
+    margin: 0;
+    font-style: italic;
+  }
+  @include media-breakpoint-down(md) {
+    .evidence {
+      font-size: 1.25em;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .item {
+      margin-bottom: $spacer / 2;
+      margin-top: $spacer / 2;
+      &:first-child { margin-top: 0; }
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+}
+
+.profit-model-title {
+  text-align: center;
+  @include media-breakpoint-up(sm){
+    &:before,
+    &:after {
+      content: " $ ";
+    }
+  }
+}

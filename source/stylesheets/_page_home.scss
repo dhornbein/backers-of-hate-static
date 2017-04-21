@@ -1,0 +1,17 @@
+// Home page
+
+.business-card {
+  margin-top: $grid-gutter-width-base / 2;
+  margin-bottom: $grid-gutter-width-base / 2;
+  .logo {
+    background-color: $gold;
+    padding: 3em;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 2.5em;
+    .btn {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

@@ -1,5 +1,16 @@
+$light-gold:     #F9E8B1;
+$double-line:    #D3D8DD;
+$dark-gray-text: #5A595E;
+$blush:          #E6CAC8;
+$gold:           #FAEAAE;
+$dark-gold:      #E1B545;
+
+$font-playfair:         'Playfair Display', serif;
+$font-source-sans:      'Source Sans Pro', sans-serif;
+$font-montserrat:       'Montserrat', sans-serif;
+
 // Colors
-//
+
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
@@ -13,25 +24,57 @@
 // $teal:   #5bc0de;
 // $pink:   #ff5b77;
 // $purple: #613d7c;
-$gold: #FAEAAE;
 
 // Create grayscale
-// $gray-dark:                 #292b2c;
+$gray-dark:                 $dark-gray-text;
 // $gray:                      #464a4c;
 // $gray-light:                #636c72;
 // $gray-lighter:              #eceeef;
 // $gray-lightest:             #f7f7f9;
 
 // Reassign color vars to semantic color scheme
-// $brand-primary:             $blue;
+$brand-primary:             $gold;
 // $brand-success:             $green;
 // $brand-info:                $teal;
 // $brand-warning:             $orange;
 // $brand-danger:              $red;
 // $brand-inverse:             $gray-dark;
 
-// Links
+// Buttons
 //
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-padding-x:                  1.5rem;
+$btn-padding-y:                  1rem;
+$btn-line-height:                1.25;
+$btn-font-weight:                $font-weight-normal;
+$btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075);
+$btn-focus-box-shadow:           0 0 0 2px rgba($gold, .25);
+$btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
+
+$btn-primary-color:              $white;
+$btn-primary-bg:                 $gold;
+$btn-primary-border:             $dark-gold;
+
+$btn-secondary-color:              $white;
+$btn-secondary-bg:                 $gold;
+$btn-secondary-border:             $white;
+
+$btn-border-radius:              0;
+$btn-border-radius-lg:           0;
+$btn-border-radius-sm:           0;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+// $body-bg:       $white;
+$body-color:    #37363D;
+// $inverse-bg:    $gray-dark;
+// $inverse-color: $gray-lighter;
+
+// Links
+
 // Style anchor elements.
 
 // $link-color:            $brand-primary;
@@ -40,7 +83,7 @@ $gold: #FAEAAE;
 // $link-hover-decoration: underline;
 
 // Grid containers
-//
+
 // Define the maximum width of `.container` for different screen sizes.
 
 // $container-max-widths: (
@@ -51,7 +94,7 @@ $gold: #FAEAAE;
 // );
 
 // Grid columns
-//
+
 // Set the number of columns and specify the width of the gutters.
 
 // $grid-columns:               12;
@@ -63,3 +106,85 @@ $grid-gutter-width-base:     40px;
 //   lg: $grid-gutter-width-base,
 //   xl: $grid-gutter-width-base
 // );
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-letter-spacing: 0.28px;
+
+// $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+// $font-family-serif:      Georgia, "Times New Roman", Times, serif;
+// $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:       $font-source-sans;
+
+$font-size-base: 1.125rem; // Assumes the browser default, typically `16px`
+// $font-size-lg:   1.25rem;
+// $font-size-sm:   .875rem;
+// $font-size-xs:   .75rem;
+
+// $font-weight-normal: normal;
+// $font-weight-bold: bold;
+
+// $font-weight-base: $font-weight-normal;
+// $line-height-base: 1.5;
+
+$font-size-h1: 2.5rem;
+$font-size-h2: 1.75rem;
+// $font-size-h3: 1.75rem;
+// $font-size-h4: 1.5rem;
+// $font-size-h5: 1.25rem;
+// $font-size-h6: 1rem;
+
+$headings-margin-bottom: $spacer;
+// $headings-font-family:   inherit;
+// $headings-font-weight:   500;
+// $headings-line-height:   1.1;
+// $headings-color:         inherit;
+
+// $display1-size: 4rem;
+// $display2-size: 3.5rem;
+// $display3-size: 2.5rem;
+// $display4-size: 1.5rem;
+//
+// $display1-weight:     700;
+// $display2-weight:     300;
+// $display3-weight:     300;
+// $display4-weight:     300;
+// $display-line-height: $headings-line-height;
+
+$lead-font-size:   1.5rem;
+// $lead-font-weight: 300;
+
+// $small-font-size: 80%;
+
+// $text-muted: $gray-light;
+
+// $abbr-border-color: $gray-light;
+
+// $blockquote-small-color:  $gray-light;
+// $blockquote-font-size:    ($font-size-base * 1.25);
+// $blockquote-border-color: $gray-lighter;
+// $blockquote-border-width: .25rem;
+
+// $hr-border-color: rgba($black,.1);
+// $hr-border-width: $border-width;
+
+// $mark-padding: .2em;
+
+// $dt-font-weight: $font-weight-bold;
+
+// $kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25);
+// $nested-kbd-font-weight: $font-weight-bold;
+
+// $list-inline-padding: 5px;
+
+// Image thumbnails
+
+$thumbnail-padding:           .125rem;
+$thumbnail-bg:                $gold;
+$thumbnail-border-width:      $border-width;
+$thumbnail-border-color:      $gold;
+$thumbnail-border-radius:     0;
+$thumbnail-box-shadow:        0 1px 2px rgba($black,.075);
+// $thumbnail-transition:        all .2s ease-in-out;

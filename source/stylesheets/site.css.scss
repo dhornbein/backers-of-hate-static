@@ -1,35 +1,25 @@
-@import "variables";
 @import "bootstrap-custom";
 @import "action_network";
+@import "global";
+@import "page_home";
+@import "page_individual";
 
-// Utility
-
-.bg-gold {
-  background-color: $gold;
-}
-
-// Home page
-
-.business-card {
-  margin-top: $grid-gutter-width-base / 2;
-  margin-bottom: $grid-gutter-width-base / 2;
-  .logo {
-    background-color: $gold;
-    padding: 3em;
-  }
-  @include media-breakpoint-up(lg) {
-    padding-bottom: 2.5em;
-    .btn {
-      position: absolute;
-      bottom: 0;
-    }
+footer.wrap {
+  color: $white;
+  padding-top: $sspacer;
+  padding-bottom: $sspacer;
+  @include media-breakpoint-up(md) {
+    padding-top: $sspacer * 1.5;
+    padding-bottom: $sspacer * 1.5;
   }
 }
 
-// Footer
+.btn-outline-secondary:hover {
+  color: $blush;
+}
 
-body > footer {
-  background-color: $gold;
-  margin-top: $grid-gutter-width-base / 2;
-  padding: 3em 0;
+.img-main.img-thumbnail,
+.img-nav.img-thumbnail {
+  padding: 4rem;
+  // filter: grayscale(100%);
 }

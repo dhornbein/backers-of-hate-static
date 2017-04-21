@@ -1,134 +1,164 @@
 ---
 title: Card page
+titles:
+ profit_model: Profit Model
 callToActionBtnText: Give em hell
 submitText: Give em hell
 canURL:
   letter: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate
   petition: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
+emailLead: Let them know how you feel
+share:
+  facebook: This is the facebook share text
+  twitter_text: This is the twitter share text
+  twitter_via: twitter_handle
+disclaimer: Full corporate profile outlining why we say this company backs hate.
+footer_ask: Like our site? Keep it going.
+donateBtn: Make a Donation Today
 ---
 
-<header class="container mb-4">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1><a href="index.html">Backers of Hate</a></h1>
-    </div>
-  </div>
-</header>
+<%= partial "includes/header" %>
 
+<%= partial "includes/nav" %>
 
-<div class="container">
-  <div class="row my-2">
-    <div class="col-6">
-      <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
-    </div>
-    <div class="col-6">
-      <h3>Backs Hate</h3>
-    </div>
-    <div class="col-12 mt-4">
-      <ul>
-        <% data.companies[0].evidence.each do |e| %>
-        <li><%= e %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row py-4 bg-inverse text-white">
-    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a></div>
-  </div>
-
-  <div class="row py-4 " id="email">
-    <div class="col-12">
-      <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
-      <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
-      <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
-      <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
-    </div>
-  </div>
-
-  <div class="row bg-faded py-4">
-    <div class="col-12">
-      <h1>Profit Model</h1>
-      <p class="text-center"><%= data.companies[0].profit %></p>
-    </div>
-  </div>
-
-  <div class="row py-4">
-    <div class="col-12">
-      <h1>Ties to Administration</h1>
-      <% data.companies[0].ties.each do |e| %>
-      <p><%= e %></p>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row py-4 bg-inverse text-white">
-    <div class="col-6">
-      <img class="img-fluid" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
-    </div>
-    <div class="col-6">
-      <h1><%= data.companies[0].ceo %></h1>
-    </div>
-    <div class="col-12 mt-4 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
-  </div>
-
-  <div class="row py-4">
-    <div class="col-12">
-      <h1>Our Demands</h1>
-      <ol>
-        <% data.companies[0].demands.each do |e| %>
-        <li><%= e %></li>
-        <% end %>
-      </ol>
-    </div>
-  </div>
-
-  <div class="row bg-faded py-4">
-    <div class="col-12">
-      <h1>Board of Directors</h1>
-      <div class="row mt-4">
-      <% data.companies[0].board.each_with_index do |b,i| %>
-        <div class="col-6">
-          <h3><%= b.name %></h3>
-          <p><small><%= b.position %></small></p>
-        </div>
-        <% if (i + 1) % 2 == 0 %>
+<section class="wrap title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-thumbnail img-main" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
       </div>
-      <div class="row">
-        <% end %>
-      <% end %>
+      <div class="col-md-6">
+        <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
+      </div>
+      <div class="col-12 mt-4">
+          <div class="row evidence-wrapper">
+            <% data.companies[0].evidence.each do |e| %>
+            <div class="col-md item"><p class="evidence"><%= e %></p></div>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="row py-4 bg-inverse text-white">
-    <div class="col-12 text-center"><a href="#email" class="btn btn-primary btn-lg"><%= current_page.data.callToActionBtnText %></a></div>
+<%= partial "includes/cta_section" %>
+
+<section class="wrap collapse" id="email">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
+        <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
+        <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
+        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="row py-4">
-    <div class="col-12">
-      <h1>Who's Next?</h1>
-      <div class="row">
-        <div class="col-6">
-          <img class="img-thumbnail" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
-        </div>
-        <div class="col-6">
-          <img class="img-thumbnail" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+<section class="wrap bg-grade-lightgray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="profit-model-title"><%= current_page.data.titles.profit_model %></h1>
+        <div class="row justify-content-center">
+          <div class="hidden-md-down col-lg-2 sideline"></div>
+          <div class="col-12 col-lg-8">
+            <p class="text-justify"><%= data.companies[0].profit %></p>
+          </div>
+          <div class="hidden-md-down col-lg-2 sideline"></div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="row bg-faded py-4">
-    <div class="col-12 text-center">
-      <p>Like our site? Keep it going.</p>
-      <a href="#donate" class="btn btn-primary btn-lg">make a donation today</a>
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ties to Administration</h1>
+        <% data.companies[0].ties.each do |e| %>
+        <p class="left-block-dark"><%= e %></p>
+        <% end %>
+      </div>
     </div>
   </div>
+</section>
 
-  <hr>
+<section class="wrap bg-grade-gray">
+  <div class="container">
+    <div class="row text-center text-sm-left">
+      <div class="col-12">
+        <img class="img-thumbnail float-sm-left mr-sm-4 mb-4 mb-sm-0" src="images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
+        <h1><%= data.companies[0].ceo %></h1>
+      </div>
+      <div class="col-12 mt-4 ">
+        <a href="#email" class="btn btn-primary" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; Backers of Hate 2017</p>
-  </footer>
-</div> <!-- /container -->
+<section class="wrap bg-grade-lightgray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h1 class="underline-md ellipsis">Our Demands</h1>
+      </div>
+      <div class="col-12 col-lg-6">
+        <ol>
+          <% data.companies[0].demands.each do |e| %>
+          <li><p><%= e %></p></li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Board of Directors</h1>
+        <div class="row">
+        <% data.companies[0].board.each_with_index do |b,i| %>
+          <div class="col-sm-6 col-lg-3">
+            <h2 class="name"><%= b.name %></h2>
+            <p class="font-small-lg"><%= b.position %></p>
+          </div>
+          <% if (i + 1) % 4 == 0 %>
+        </div>
+        <div class="row">
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= partial "includes/cta_section" %>
+
+<%= partial "includes/social" %>
+
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Who's Next?</h1>
+        <div class="row">
+          <div class="col-6">
+            <img class="img-thumbnail img-nav" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
+          </div>
+          <div class="col-6">
+            <img class="img-thumbnail img-nav" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <!-- /container -->
+
+<%= partial "includes/footer" %>
