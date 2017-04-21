@@ -1,0 +1,13 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-grade-gray">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <% data.companies.each_with_index do |c,i| %>
+      <a class="nav-item nav-link" href="#"><%= c.name %></a>
+      <% end %>
+    </div>
+  </div>
+</nav>

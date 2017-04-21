@@ -4,6 +4,18 @@
 @import "page_home";
 @import "page_individual";
 
+.nav{
+  text-align: center;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  .nav-item{
+    float: inherit;
+    display: inline-block;
+  }
+}
+
 footer.wrap {
   color: $white;
   padding-top: $sspacer;
