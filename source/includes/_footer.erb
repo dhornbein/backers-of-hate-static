@@ -1,12 +1,13 @@
-<footer>
+<footer class="wrap bg-blush text-center">
   <div class="container">
     <div class="row">
-      <div class="disclaimer">
-        Full corporates profile outlining why we say this company backs hate available on company pages (click above).
-        Full corporate profile outlining why we say this company backs hate.
-      </div>
       <div class="col-12 text-center">
-        <p>Like our site? Keep it going. <a href="#donate" class="btn btn-outline-primary">Make a Donation Today</a></p>
+        <p class="hidden-md-up"><%= current_page.data.footer_ask %></p>
+        <p class="lead hidden-sm-down mr-md-4 d-inline"><%= current_page.data.footer_ask %></p>
+        <a href="#donate" class="btn btn-outline-secondary"><%= current_page.data.donateBtn %></a>
+      </div>
+      <div class="col-12 mt-4 disclaimer">
+        <small><%= current_page.data.disclaimer %></small>
       </div>
     </div>
   </div>

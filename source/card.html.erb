@@ -12,6 +12,9 @@ share:
   facebook: This is the facebook share text
   twitter_text: This is the twitter share text
   twitter_via: twitter_handle
+disclaimer: Full corporate profile outlining why we say this company backs hate.
+footer_ask: Like our site? Keep it going.
+donateBtn: Make a Donation Today
 ---
 
 <%= partial "includes/header" %>
@@ -22,7 +25,7 @@ share:
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img class="img-fluid" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
+        <img class="img-thumbnail img-main" src="images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
       </div>
       <div class="col-md-6">
         <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
@@ -147,10 +150,10 @@ share:
         <h1 class="text-center">Who's Next?</h1>
         <div class="row">
           <div class="col-6">
-            <img class="img-thumbnail" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
+            <img class="img-thumbnail img-nav" src="images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
           </div>
           <div class="col-6">
-            <img class="img-thumbnail" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+            <img class="img-thumbnail img-nav" src="images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
           </div>
         </div>
       </div>

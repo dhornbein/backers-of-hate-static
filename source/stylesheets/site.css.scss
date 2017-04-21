@@ -4,51 +4,22 @@
 @import "page_home";
 @import "page_individual";
 
-// Utility
-
-// .bg-gold {
-//   background-color: $gold;
-// }
-
-// Footer
-
-// body > footer {
-//   background-color: $gold;
-//   margin-top: $grid-gutter-width-base / 2;
-//   padding: 3em 0;
-// }
-
-//  COPIED FROM DESKTOP SIZE MOCKUP IN SKETCH
-
-//  buttons
-.gold-cta {
-}
-.gold-cta {
-  @extend .gradiant-gold;
-  border: 1px solid #DDB450;
-  font-family: Montserrat-Regular;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 0.87px;
-  line-height: 28px;
-  text-shadow: -1px -1px 0 #D4AD4E;
-}
-.footer-cta { border: 2px solid #FFFFFF; }
-.footer-cta a {
-  font-family: Montserrat-Regular;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 0.87px;
-  line-height: 28px;
+footer.wrap {
+  color: $white;
+  padding-top: $sspacer;
+  padding-bottom: $sspacer;
+  @include media-breakpoint-up(md) {
+    padding-top: $sspacer * 1.5;
+    padding-bottom: $sspacer * 1.5;
+  }
 }
 
-//  nav
+.btn-outline-secondary:hover {
+  color: $blush;
+}
 
-.nav a {
-  font-family: Montserrat-Regular;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 1px;
-  text-shadow: -1px -1px 0 #9C9BA1;
-  border-right: 2px solid #B9BDC0;
+.img-main.img-thumbnail,
+.img-nav.img-thumbnail {
+  padding: 4rem;
+  // filter: grayscale(100%);
 }

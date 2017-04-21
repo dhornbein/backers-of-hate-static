@@ -113,6 +113,10 @@ h1, .h1 {
   };
 }
 
+.bg-blush {
+  background-color: $blush;
+}
+
 .btn-social {
   @extend .btn-primary;
   display: block;
