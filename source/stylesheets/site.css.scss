@@ -9,7 +9,7 @@ $header-heights: (
   sm: 300px,
   md: 340px,
   lg: 350px,
-  xl: 500px
+  xl: 480px
 );
 
 @each $breakpoint, $height in $header-heights {
@@ -25,7 +25,7 @@ $header-heights: (
       .header {
         height: $height;
         .header-title {
-          background-size: auto ($height - 40px);
+          background-size: auto ($height * .8);
         }
       }
     }
