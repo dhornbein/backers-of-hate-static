@@ -4,6 +4,34 @@
 @import "page_home";
 @import "page_individual";
 
+$header-heights: (
+  xs: 220px,
+  sm: 300px,
+  md: 340px,
+  lg: 350px,
+  xl: 500px
+);
+
+@each $breakpoint, $height in $header-heights {
+  @if $breakpoint == "xs" {
+    .header {
+      height: $height;
+      .header-title {
+        background-size: auto ($height - 40px);
+      }
+    }
+  } @else {
+    @include media-breakpoint-up($breakpoint){
+      .header {
+        height: $height;
+        .header-title {
+          background-size: auto ($height - 40px);
+        }
+      }
+    }
+  }
+}
+
 .header {
   background-color: #F9E659;
   background-image: url('../images/characters.png');
@@ -12,31 +40,16 @@
   background-size: auto 100%;
   text-align: center;
   font-size: 4em;
-  height: 250px;
-  @include media-breakpoint-up(md) {
-    height: 400px;
-  }
-  @include media-breakpoint-up(lg) {
-    height: 500px;
-  }
 
   .header-title {
     @include text-hide;
     background-image: url('../images/boh-logo-sm.png');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 250px;
     margin: 0;
     height: 100%;
-    @include media-breakpoint-up(sm) {
-      background-size: 300px;
-    }
     @include media-breakpoint-up(md) {
       background-image: url('../images/boh-logo-lg.png');
-      background-size: 400px;
-    }
-    @include media-breakpoint-up(lg) {
-      background-size: 450px;
     }
   }
 }
