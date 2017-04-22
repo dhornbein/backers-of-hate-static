@@ -5,7 +5,8 @@
 @import "page_individual";
 
 .header {
-  background-image: url('../images/header.jpg');
+  background-color: #F9E659;
+  background-image: url('../images/characters.png');
   background-position: center;
   background-repeat: repeat-x;
   background-size: auto 100%;
@@ -18,10 +19,10 @@
   @include media-breakpoint-up(lg) {
     height: 500px;
   }
-  
+
   .header-title {
     @include text-hide;
-    background-image: url('../images/header_title.jpg');
+    background-image: url('../images/boh-logo-sm.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 250px;
@@ -31,11 +32,19 @@
       background-size: 300px;
     }
     @include media-breakpoint-up(md) {
+      background-image: url('../images/boh-logo-lg.png');
       background-size: 400px;
     }
     @include media-breakpoint-up(lg) {
-      background-size: 500px;
+      background-size: 450px;
     }
+  }
+}
+
+.spanish .header-title {
+  background-image: url('../images/boh-spanish-logo-sm.png');
+  @include media-breakpoint-up(md) {
+    background-image: url('../images/boh-spanish-logo-lg.png');
   }
 }
 
@@ -95,10 +104,4 @@ footer.wrap {
 
 .btn-outline-secondary:hover {
   color: $blush;
-}
-
-.img-main.img-thumbnail,
-.img-nav.img-thumbnail {
-  padding: 4rem;
-  // filter: grayscale(100%);
 }
