@@ -5,9 +5,8 @@ titles:
  profit_model: Profit Model
 callToActionBtnText: Give em hell
 submitText: Give em hell
-canURL:
-  letter: https://actionnetwork.org/widgets/v2/letter/send-a-letter-to-corporate-backers-of-hate
-  petition: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
+commentText: Write your letter
+canURL: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
 emailLead: Let them know how you feel
 share:
   facebook: This is the facebook share text
@@ -44,14 +43,11 @@ donateBtn: Make a Donation Today
 
 <%= partial "includes/cta_section" %>
 
-<section class="wrap collapse" id="email">
+<section class="wrap can-wrapper collapse" id="email" data-toggle="true">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <!-- <script src='https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate?format=js&source=widget'></script>
-        <div id='can-petition-area-stop-supporting-hate' style='width: 100%'></div> -->
-        <script src='<%= current_page.data.canURL.petition %>?format=js&source=widget&can_widget_id=embedForm'></script>
-        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" style='width: 100%'></div>
+        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" data-comment="<%= current_page.data.commentText %>" style='width: 100%'></div>
       </div>
     </div>
   </div>
@@ -95,7 +91,7 @@ donateBtn: Make a Donation Today
         <h1><%= data.companies[0].ceo %></h1>
       </div>
       <div class="col-12 mt-4 ">
-        <a href="#email" class="btn btn-primary" data-toggle="collapse" aria-controls="collapseExample"><%= current_page.data.callToActionBtnText %></a>
+        <%= partial 'includes/cta_button' %>
       </div>
     </div>
   </div>
@@ -146,7 +142,7 @@ donateBtn: Make a Donation Today
 
 <section class="wrap">
   <div class="container">
-    <div class="row">
+    <div id="next-block" class="row">
       <div class="col-12">
         <h1 class="text-center">Who's Next?</h1>
         <div class="row">
@@ -163,3 +159,5 @@ donateBtn: Make a Donation Today
 </section> <!-- /container -->
 
 <%= partial "includes/footer" %>
+
+<script src='<%= current_page.data.canURL %>?format=js&source=widget&can_widget_id=embedForm'></script>

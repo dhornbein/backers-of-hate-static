@@ -1,13 +1,15 @@
 
 $tan-spacer: $spacer-y;
-$tan-textarea-height: 150px;
+$tan-textarea-height: 210px;
+
+.can-wrapper {
+  border-bottom: 4px double $double-line;
+}
 
 // TAN Form layout
 .can_embed {
   h2.line {}
-  h4 {
-    @extend .h5;
-  }
+  h4 { display: none; }
 
   form#new_delivery {}
   form#letter-form {}
@@ -15,12 +17,46 @@ $tan-textarea-height: 150px;
   #form_col1 {}
   #form_col2 {}
 
-  #logo_wrap {}
+  #d_sharing {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  #can_thank_you {
+    h1 { text-align: center; }
+    & > .row { margin-bottom: $spacer; }
+  }
+
+  #action_info { margin-bottom: $spacer; }
+  #action_info,
+  #logo_wrap { text-align: center; }
+
+  @include media-breakpoint-up(md) {
+    #new_signature:not(.can_returning) {
+      @include make-row();
+      #form_col1,
+      #form_col2 {
+        @include make-col-ready();
+      }
+
+      #form_col1 {
+        @include make-col(6);
+      }
+      #form_col2 {
+        @include make-col(6);
+      }
+    }
+  }
 }
 
 // TAN Form style
 .can_embed form {
   overflow: hidden;
+
+  .ajax-loading { display: none; }
 
   textarea {
     min-height: $tan-textarea-height;
@@ -35,6 +71,10 @@ $tan-textarea-height: 150px;
     &.error_input {
       border-color: $brand-danger;
     }
+  }
+
+  label {
+    cursor: pointer;
   }
 
   .country_wrap {
