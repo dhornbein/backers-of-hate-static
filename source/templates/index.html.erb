@@ -12,7 +12,7 @@ footer_ask: Like our site? Keep it going.
 donateBtn: Make a Donation Today
 ---
 
-<%= partial "includes/header" %>
+<%= partial "includes/header", locals: { locale: locale } %>
 
 <%= partial "includes/nav" %>
 
@@ -28,7 +28,7 @@ donateBtn: Make a Donation Today
   <% data.companies.each_with_index do |c,i| %>
     <div class="col-12 col-md-4 business-card">
       <div class="logo">
-        <img class="img-fluid" src="images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
+        <img class="img-fluid" src="/images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
       </div>
       <p class="my-4"><%= c.summery %></p>
       <a href="<%= c.url %>" class="btn btn-primary"><%= current_page.data.callToActionBtnText %></a>

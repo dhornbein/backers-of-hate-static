@@ -41,23 +41,28 @@ $header-heights: (
   text-align: center;
   font-size: 4em;
 
-  .header-title {
+  .en {
     @include text-hide;
-    background-image: url('../images/boh-logo-sm.png');
+    background-image: url('../images/boh-logo-sm-en.png');
     background-position: center center;
     background-repeat: no-repeat;
     margin: 0;
     height: 100%;
     @include media-breakpoint-up(md) {
-      background-image: url('../images/boh-logo-lg.png');
+      background-image: url('../images/boh-logo-lg-en.png');
     }
   }
 }
 
-.spanish .header-title {
-  background-image: url('../images/boh-spanish-logo-sm.png');
+.es {
+  @include text-hide;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100%;
+  background-image: url('../images/boh-logo-sm-es.png');
   @include media-breakpoint-up(md) {
-    background-image: url('../images/boh-spanish-logo-lg.png');
+    background-image: url('../images/boh-logo-lg-es.png');
   }
 }
 

@@ -4,9 +4,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar">
     <div class="navbar-nav">
-      <% data.companies.each_with_index do |c,i| %>
+      <% dato.organizations.each_with_index do |c,i| %>
       <%# add class to 'active' to current page %>
-      <a class="nav-item nav-link" href="card.html"><%= c.name %></a>
+      <a class="nav-item nav-link" href=<%= c.url_title %>.html><%= c.name %></a>
       <% end %>
     </div>
   </div>
