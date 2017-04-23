@@ -40,10 +40,8 @@ activate :directory_indexes
 set :lang, :en
 
 dato.tap do |dato|
-  # iterate over all the administrative area languages
   dato.available_locales.each do |locale|
 
-    # switch to the nth locale
     I18n.with_locale(locale) do
 
     	proxy(
@@ -53,9 +51,7 @@ dato.tap do |dato|
     		locale: locale
     	)
 
-      # iterate over the "Article" records...
       dato.organizations.each do |org|
-        # ...and create a proxy file for each article
         proxy(
           "/#{locale}/#{org.url_title}.html",
           "/templates/card.html",
