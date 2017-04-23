@@ -35,7 +35,8 @@ end
 
 activate :dato
 
-activate :i18n, langs: dato.available_locales
+activate :i18n, langs: dato.available_locales, mount_at_root: false
+activate :directory_indexes
 set :lang, :en
 
 dato.tap do |dato|
@@ -68,3 +69,5 @@ end
 
 ignore "templates/index.html.erb"
 ignore "templates/card.html.erb"
+
+redirect "index.html", to: "en/"
