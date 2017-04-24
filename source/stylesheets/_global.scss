@@ -6,10 +6,11 @@
 
 }
 
+.bg-grade-darkgray { background-image: linear-gradient(-269deg, #5B595E 1%, #A09CA7 48%, #5B595E 96%); }
 .bg-grade-lightgray { background-image: linear-gradient(0deg, #EDF1F4 1%, #FFFFFF 100%); }
 .gradiant-gray { background-image: linear-gradient(-269deg, #CBC9D4 1%, #A8A7AC 48%, #CBC9D4 96%); }
 .gradiant-gray-y { background-image: linear-gradient(0deg, #CBC9D4 1%, #A8A7AC 96%); }
-.gradiant-gold { background-image: linear-gradient(0deg, #EABF57 0%, #F3D98E 100%); }
+.gradiant-gold { background-image: linear-gradient(0deg, #D4C023 0%, #F3E367 100%); }
 .nav-bar { background-image: linear-gradient(-180deg, #A8A7AC 2%, #C2C0CB 100%); }
 
 p {
@@ -19,6 +20,19 @@ p {
 @include media-breakpoint-up(md) {
   .font-small-lg {
     font-size: 85%;
+  }
+}
+
+.btn-outline-dark {
+  @include button-outline-variant($gray-dark);
+  padding: .5em 1em;
+  border-width: 2px;
+  font-family: $font-montserrat;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    font-size: 0.8em;
+    letter-spacing: 0;
   }
 }
 
@@ -38,12 +52,9 @@ h1, .h1 {
   display: inline-block;
 }
 
-@include media-breakpoint-up(md) {
-.underline-md {
-    padding-bottom: 1rem;
-    border-bottom: 4px $double-line double;
-    display: inline-block;
-  }
+.row.underline {
+  display: flex;
+  margin-bottom: $spacer * 2;
 }
 
 .sideline {
@@ -105,8 +116,22 @@ h1, .h1 {
   }
 }
 
+.left-block-gold {
+  @extend .left-block;
+  &:before {
+    @extend .gradiant-gold;
+  }
+}
+
 .bg-grade-gray {
   @extend .gradiant-gray;
+  color: $white;
+  @include headers{
+    color: $white;
+  };
+}
+
+.bg-grade-darkgray {
   color: $white;
   @include headers{
     color: $white;

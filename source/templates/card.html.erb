@@ -1,8 +1,9 @@
 ---
 title: Card page
 siteTitle: Backers of Hate
+summery: One short sentence here about why this is happening and what goes on once blah blah blah
 titles:
- profit_model: Profit Model
+ profit_model: Profiting from Trump's Agenda?
 callToActionBtnText: Give em hell
 submitText: Give em hell
 commentText: Write your letter
@@ -28,30 +29,44 @@ donateBtn: Make a Donation Today
         <img class="img-thumbnail img-main" src="/images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
       </div>
       <div class="col-md-6">
-        <h1 class="text-md-left underline mt-md-4">Backs Hate</h1>
+        <h1 class="text-md-left mt-md-4">Backs Hate</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center py-4 mt-md-4">
+      <div class="hidden-sm-down col-md-2 sideline"></div>
+      <div class="col-12 col-md-8">
+        <h2 class="font-italic"><%= current_page.data.summery %></h2>
+      </div>
+      <div class="hidden-sm-down col-md-2 sideline"></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ties to Administration</h1>
       </div>
       <div class="col-12 mt-4">
-          <div class="row evidence-wrapper">
-            <% data.companies[0].evidence.each do |e| %>
-            <div class="col-md item"><p class="evidence"><%= e %></p></div>
-            <% end %>
+        <div class="row evidence-wrapper">
+          <div class="col-md item">
+            <ul class="evidence">
+          <% data.companies[0].evidence.each do |e| %>
+            <li><%= e %></li>
+          <% end %>
+            </ul>
           </div>
+          <% data.companies[0].ties.each do |e| %>
+          <div class="col-md item"><p class="evidence"><%= e %></p></div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <%= partial "includes/cta_section" %>
-
-<section class="wrap can-wrapper collapse" id="email" data-toggle="true">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" data-comment="<%= current_page.data.commentText %>" style='width: 100%'></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="wrap bg-grade-lightgray">
   <div class="container">
@@ -70,38 +85,11 @@ donateBtn: Make a Donation Today
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap bg-grade-darkgray" id="email">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Ties to Administration</h1>
-        <% data.companies[0].ties.each do |e| %>
-        <p class="left-block-dark"><%= e %></p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap bg-grade-gray">
-  <div class="container">
-    <div class="row text-center text-sm-left">
-      <div class="col-12">
-        <img class="img-thumbnail float-sm-left mr-sm-4 mb-4 mb-sm-0" src="/images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
-        <h1><%= data.companies[0].ceo %></h1>
-      </div>
-      <div class="col-12 mt-4 ">
-        <%= partial 'includes/cta_button' %>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap bg-grade-lightgray">
-  <div class="container">
-    <div class="row">
+    <div class="row underline">
       <div class="col-12 col-lg-6">
-        <h1 class="underline-md ellipsis">Our Demands</h1>
+        <h1 class="ellipsis">Our Demands</h1>
       </div>
       <div class="col-12 col-lg-6">
         <ol>
@@ -109,6 +97,25 @@ donateBtn: Make a Donation Today
           <li><p><%= e %></p></li>
           <% end %>
         </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" data-comment="<%= current_page.data.commentText %>" style='width: 100%'></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap bg-grade-lightgray">
+  <div class="container">
+    <div class="row text-center text-sm-left">
+      <div class="col-12 col-md-2">
+        <img class="img-thumbnail float-sm-left mr-sm-4 mb-4 mb-sm-0" src="/images/ceo.png" alt="Headshot of <%= data.companies[0].ceo %>">
+      </div>
+      <div class="col-12 col-md-10">
+        <h1><%= data.companies[0].ceo %></h1>
+        <a href="#PDF-LINK-HERE" class="btn btn-outline-dark">Full Corporate Profile</a>
       </div>
     </div>
   </div>

@@ -8,14 +8,29 @@ $tan-textarea-height: 210px;
 
 // TAN Form layout
 .can_embed {
-  h2.line {}
+
+  a, .international_link {
+    color: $gold;
+    &:hover {
+      color: lighten($gold, 20%);
+    }
+  }
+
+  h2 { text-align: center; }
+  h3 {
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: $spacer * 2;
+  }
   h4 { display: none; }
 
-  form#new_delivery {}
-  form#letter-form {}
-
-  #form_col1 {}
-  #form_col2 {}
+  // Hide share block title
+  #share-block-placed {
+    .btn-share {
+     color:white;
+    }
+  }
 
   #d_sharing {
     ul {
@@ -31,8 +46,8 @@ $tan-textarea-height: 210px;
   }
 
   #action_info { margin-bottom: $spacer; }
-  #action_info,
-  #logo_wrap { text-align: center; }
+
+  #logo_wrap { display: none; }
 
   @include media-breakpoint-up(md) {
     #new_signature:not(.can_returning) {
@@ -43,10 +58,10 @@ $tan-textarea-height: 210px;
       }
 
       #form_col1 {
-        @include make-col(6);
+        @include make-col(4);
       }
       #form_col2 {
-        @include make-col(6);
+        @include make-col(8);
       }
     }
   }
@@ -82,13 +97,8 @@ $tan-textarea-height: 210px;
   }
 
   .international_link {
-    color: $link-color;
     cursor: pointer;
     text-decoration: $link-decoration;
-    @include hover {
-      color: $link-hover-color;
-      text-decoration: $link-hover-decoration;
-    }
   }
 
   .country_drop_wrap {
