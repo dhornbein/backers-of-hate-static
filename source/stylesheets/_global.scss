@@ -23,6 +23,18 @@ p {
   }
 }
 
+.btn-grey {
+  @include button-variant($gray-dark,#5B595E,#B8BDC0);
+  background-image: linear-gradient(180deg, #CBC9D4 1%, #A8A7AC 96%);
+  color: $white;
+  font-family: $font-montserrat;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #838383;
+  letter-spacing: 0.87px;
+  &:hover {
+    color: darken($white,10%);
+  }
+}
 .btn-outline-dark {
   @include button-outline-variant($gray-dark);
   padding: .5em 1em;
