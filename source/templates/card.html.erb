@@ -89,7 +89,9 @@
     <div class="row text-center text-sm-left">
       <div class="col-12 col-md-12">
         <h1>CEO: <%= organization.ceo %></h1>
-        <a href=<%= organization.corporate_profile.nil? ? "#" : organization.corporate_profile.url %> class="btn btn-outline-dark">Full Corporate Profile</a>
+        <a href=<%= organization.corporate_profile.nil? ? "#" : organization.corporate_profile.url %>>
+          <%= dato.static_content.full_corporate_profile_button_text %>
+        </a>
       </div>
     </div>
   </div>
@@ -99,7 +101,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Board of Directors</h1>
+        <h1><%= dato.static_content.board_of_directors_header %></h1>
         <div class="row">
         <% data.companies[0].board.each_with_index do |b,i| %>
           <div class="col-sm-6 col-lg-3">
@@ -125,7 +127,7 @@
   <div class="container">
     <div id="next-block" class="row">
       <div class="col-12">
-        <h1 class="text-center">Who's Next?</h1>
+        <h1 class="text-center"><%= dato.static_content.board_of_directors_header %></h1>
         <div class="row">
           <div class="col-6">
             <img class="img-thumbnail img-nav" src="/images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
