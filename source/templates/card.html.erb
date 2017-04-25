@@ -29,7 +29,7 @@ donateBtn: Make a Donation Today
         <img class="img-thumbnail img-main" src="/images/logos/<%= organization.url_title %>-logo-card.jpg" alt="<%= organization.name %> logo">
       </div>
       <div class="col-md-6">
-        <h1 class="text-md-left mt-md-4">Backs Hate</h1>
+        <h1 class="text-md-left mt-md-4"><%= dato.static_content.backs_hate_header %></h1>
       </div>
     </div>
     <div class="row justify-content-center py-4 mt-md-4">
@@ -46,12 +46,12 @@ donateBtn: Make a Donation Today
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Ties to Administration</h1>
+        <h1><%= dato.static_content.administration_ties_header_text %></h1>
       </div>
       <div class="col-12 mt-4">
         <div class="row evidence-wrapper">
-          <% get_fields(organization, "demands").times do |e| %>
-            <% unless organization.send("demands_#{e+1}").nil? %>
+          <% get_fields(organization, "ties").times do |e| %>
+            <% unless organization.send("ties_#{e+1}").nil? %>
               <div class="col-md item"><p class="evidence"><%= organization.send("ties_#{e+1}") %></p></div>
             <% end %>
           <% end %>
