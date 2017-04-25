@@ -25,13 +25,13 @@ donateBtn: Make a Donation Today
     <div class="hidden-sm-down col-md-2 sideline"></div>
   </div>
   <div class="row">
-  <% data.companies.each_with_index do |c,i| %>
+  <% dato.organizations.each_with_index do |organization,i| %>
     <div class="col-12 col-md-4 business-card">
       <div class="logo">
-        <img class="img-fluid" src="/images/logos/<%= c.logo %>" alt="<%= c.name %> logo">
+        <img class="img-fluid" src="/images/logos/<%= organization.url_title %>-logo-card.jpg" alt="<%= organization.name %> logo">
       </div>
-      <p class="my-4"><%= c.summery %></p>
-      <a href="<%= c.url %>" class="btn btn-grey"><%= current_page.data.callToActionBtnText %></a>
+      <p class="my-4"><%= organization.summary %></p>
+      <a href="<%= organization.url_title %>" class="btn btn-grey"><%= current_page.data.callToActionBtnText %></a>
     </div>
     <% if (i + 1) % 3 == 0 %>
   </div><div class="row">
