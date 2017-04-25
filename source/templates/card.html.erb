@@ -112,7 +112,7 @@ donateBtn: Make a Donation Today
       </div>
       <div class="col-12 col-md-10">
         <h1>CEO: <%= organization.ceo %></h1>
-        <a href=<%= organization.corporate_profile.url %> class="btn btn-outline-dark">Full Corporate Profile</a>
+        <a href=<%= organization.corporate_profile.nil? ? "#" : organization.corporate_profile.url %> class="btn btn-outline-dark">Full Corporate Profile</a>
       </div>
     </div>
   </div>
