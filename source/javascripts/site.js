@@ -37,6 +37,8 @@ $(document).ready(function() {
       } else {
         $(targetForm).removeClass("can_returning");
       }
+
+      appendSourceToFormAction();
     });
     // Fires on successful submission
     $(document).on('can_embed_submitted', function(e) {
@@ -58,4 +60,32 @@ $(document).ready(function() {
         scrollTop: $("#email").offset().top
       }, 500);
     }
+
+    function appendSourceToAllLinks() {
+      var match = RegExp('[?&]' + "source" + '=([^&]*)').exec(window.location.search);
+      source = match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+
+      if (source && source.length > 0) {
+        $('a[href]').each(function () {
+          var elem = $(this);
+          var href = elem.attr('href');
+          elem.attr('href', href + (href.indexOf('?') != -1 ? '&' : '?') + 'source=' + source);
+        });
+      }
+    }
+
+    function appendSourceToFormAction() {
+      var match = RegExp('[?&]' + "source" + '=([^&]*)').exec(window.location.search);
+      source = match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+
+      if (source && source.length > 0) {
+        $('form[action]').each(function () {
+          var elem = $(this);
+          var action = elem.attr('action');
+          elem.attr('action', action + (action.indexOf('?') != -1 ? '&' : '?') + 'source=' + source);
+        });
+      }
+    }
+
+    appendSourceToAllLinks();
 });

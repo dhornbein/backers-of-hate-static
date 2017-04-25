@@ -14,11 +14,11 @@ page '/*.txt', layout: false
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
+helpers do
+  def get_fields(org, field)
+    org.to_hash.select { |k,v| k.to_s.include? field }.count
+  end
+end
 
 def slugify(title)
 	title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')

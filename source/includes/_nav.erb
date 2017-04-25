@@ -5,8 +5,8 @@
   <div class="collapse navbar-collapse" id="navbar">
     <div class="navbar-nav">
       <% dato.organizations.each_with_index do |c,i| %>
-      <%# add class to 'active' to current page %>
-      <a class="nav-item nav-link" href=<%= c.url_title %>.html><%= c.name %></a>
+        <%# add class to 'active' to current page %>
+        <a class="nav-item nav-link" href=<%= c.url_title %>.html><%= c.name %></a>
       <% end %>
     </div>
   </div>

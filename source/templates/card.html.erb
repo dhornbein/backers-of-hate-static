@@ -7,7 +7,7 @@ titles:
 callToActionBtnText: Give em hell
 submitText: Give em hell
 commentText: Write your letter
-canURL: https://actionnetwork.org/widgets/v2/petition/stop-supporting-hate
+canURL: https://actionnetwork.org/widgets/v2/petition/test-petition-75
 emailLead: Let them know how you feel
 share:
   facebook: This is the facebook share text
@@ -26,7 +26,7 @@ donateBtn: Make a Donation Today
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img class="img-thumbnail img-main" src="/images/logos/<%= data.companies[0].logo %>" alt="<%= data.companies[0].name %> logo">
+        <img class="img-thumbnail img-main" src="/images/logos/<%= organization.url_title %>-logo-card.jpg" alt="<%= organization.name %> logo">
       </div>
       <div class="col-md-6">
         <h1 class="text-md-left mt-md-4">Backs Hate</h1>
@@ -35,7 +35,7 @@ donateBtn: Make a Donation Today
     <div class="row justify-content-center py-4 mt-md-4">
       <div class="hidden-sm-down col-md-2 sideline"></div>
       <div class="col-12 col-md-8">
-        <h2 class="font-italic"><%= current_page.data.summery %></h2>
+        <h2 class="font-italic"><%= organization.summary %></h2>
       </div>
       <div class="hidden-sm-down col-md-2 sideline"></div>
     </div>
@@ -50,15 +50,10 @@ donateBtn: Make a Donation Today
       </div>
       <div class="col-12 mt-4">
         <div class="row evidence-wrapper">
-          <div class="col-md item">
-            <ul class="evidence">
-          <% data.companies[0].evidence.each do |e| %>
-            <li><%= e %></li>
-          <% end %>
-            </ul>
-          </div>
-          <% data.companies[0].ties.each do |e| %>
-          <div class="col-md item"><p class="evidence"><%= e %></p></div>
+          <% get_fields(organization, "demands").times do |e| %>
+            <% unless organization.send("demands_#{e+1}").nil? %>
+              <div class="col-md item"><p class="evidence"><%= organization.send("ties_#{e+1}") %></p></div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -93,8 +88,10 @@ donateBtn: Make a Donation Today
       </div>
       <div class="col-12 col-lg-6">
         <ol>
-          <% data.companies[0].demands.each do |e| %>
-          <li><p><%= e %></p></li>
+          <% get_fields(organization, "demands").times do |e| %>
+            <% unless organization.send("demands_#{e+1}").nil? %>
+              <li><p><%= organization.send("demands_#{e+1}") %></p></li>
+            <% end %>
           <% end %>
         </ol>
       </div>
