@@ -25,10 +25,27 @@ def other_locale(locale)
 end
 
 activate :dato
-
 activate :i18n, langs: dato.available_locales, mount_at_root: false
 activate :directory_indexes
 set :lang, :en
+
+def org_list
+  ["jpmorgan", "wellsfargo", "goldman-sachs", "boeing", "disney", "ibm", "blackrock", "uber", "blackstone"]
+end
+
+def whos_next(org)
+  i = org_list.index(org)
+  list = []
+  case i
+  when 0..6
+    list += org_list[i+1..i+2]
+  when 7
+    list += ["blackstone", "jpmorgan"]
+  when 8
+    list += ["jpmorgan", "wellsfargo"]
+  end
+  list
+end
 
 dato.tap do |dato|
   dato.available_locales.each do |locale|
@@ -45,7 +62,7 @@ dato.tap do |dato|
         proxy(
           "/#{locale}/#{org.url_title}.html",
           "/templates/card.html",
-          locals: { locale: locale, other_locale_url: "/#{other_lang}/#{org.url_title}.html", organization: org },
+          locals: { locale: locale, other_locale_url: "/#{other_lang}/#{org.url_title}.html", organization: org, whos_next: whos_next(org.url_title) },
           locale: locale
         )
       end

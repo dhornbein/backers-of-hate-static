@@ -127,13 +127,17 @@
   <div class="container">
     <div id="next-block" class="row">
       <div class="col-12">
-        <h1 class="text-center"><%= dato.static_content.board_of_directors_header %></h1>
+        <h1 class="text-center"><%= dato.static_content.whos_next_header %></h1>
         <div class="row">
           <div class="col-6">
-            <img class="img-thumbnail img-nav" src="/images/logos/<%= data.companies[8].logo %>" alt="<%= data.companies[8].name %> logo">
+            <a href=<%= "/#{locale}/#{whos_next[0]}.html" %>>
+              <img class="img-thumbnail img-nav" src="/images/logos/<%= whos_next[0] %>-logo-card.jpg" alt="<%= whos_next[0] %> logo">
+            </a>
           </div>
           <div class="col-6">
-            <img class="img-thumbnail img-nav" src="/images/logos/<%= data.companies[1].logo %>" alt="<%= data.companies[1].name %> logo">
+            <a href=<%= "/#{locale}/#{whos_next[1]}.html" %>>
+              <img class="img-thumbnail img-nav" src="/images/logos/<%= whos_next[1] %>-logo-card.jpg" alt="<%= whos_next[1] %> logo">
+            </a>
           </div>
         </div>
       </div>
