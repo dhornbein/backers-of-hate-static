@@ -78,7 +78,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <div id='embedForm' data-submit="<%= current_page.data.submitText %>" data-comment="<%= current_page.data.commentText %>" style='width: 100%'></div>
+        <div id='embedForm' data-submit="<%= dato.static_content.submit_petition_test %>" data-comment="Write your letter" style='width: 100%'></div>
       </div>
     </div>
   </div>
@@ -156,4 +156,4 @@
 
 <%= partial "includes/footer" %>
 
-<script src='<%= current_page.data.canURL %>?format=js&source=widget&can_widget_id=embedForm'></script>
+<script src='<%= organization.action_network_action_link %>?format=js&source=widget&can_widget_id=embedForm'></script>
