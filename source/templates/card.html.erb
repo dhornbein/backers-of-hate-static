@@ -121,7 +121,16 @@
 
 <%= partial "includes/cta_section" %>
 
-<%= partial "includes/social", locals: { url: "http://www.backersofhate.org.s3-website-us-east-1.amazonaws.com/en/goldman-sachs.html", facebook_share_text: "Hate the haters!", twitter_share_text: "", twitter_handle: "" } %>
+<%= partial "includes/social", 
+    locals: { 
+      url: "http://www.backersofhate.org/#{current_page.path}",
+      facebook_share_title: (organization.facebook_share_title.blank? ? "" : CGI::escape(organization.facebook_share_title)),
+      facebook_share_text: (organization.facebook_share_text.blank? ? "" : CGI::escape(organization.facebook_share_text)),
+      twitter_share_text: "",
+      twitter_handle: "",
+      picture: "https://s3.amazonaws.com/www.backersofhate.org/images/boh_fb_#{locale}.png" 
+    } 
+  %>
 
 <section class="wrap">
   <div class="container">
