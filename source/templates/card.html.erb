@@ -60,7 +60,7 @@
   </div>
 </section>
 
-<section class="wrap bg-grade-darkgray" id="email">
+<section class="wrap bg-grade-darkgray">
   <div class="container">
     <div class="row underline">
       <div class="col-12 col-lg-6">
@@ -76,9 +76,9 @@
         </ol>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="email">
       <div class="col-12">
-        <div id='embedForm' data-submit="<%= dato.static_content.submit_petition_test %>" data-comment="Write your letter" style='width: 100%'></div>
+        <div id='embedForm' data-submit="<%= dato.static_content.submit_petition_text %>" data-comment="Write your letter" style='width: 100%'></div>
       </div>
     </div>
   </div>
@@ -126,8 +126,7 @@
       url: "http://www.backersofhate.org/#{current_page.path}",
       facebook_share_title: (organization.facebook_share_title.blank? ? "" : CGI::escape(organization.facebook_share_title)),
       facebook_share_text: (organization.facebook_share_text.blank? ? "" : CGI::escape(organization.facebook_share_text)),
-      twitter_share_text: "",
-      twitter_handle: "",
+      twitter_share_text: organization.twitter_share_text,
       picture: "https://s3.amazonaws.com/www.backersofhate.org/images/boh_fb_#{locale}.png" 
     } 
   %>
