@@ -69,7 +69,7 @@
       <div class="col-12 col-lg-6">
         <ol>
           <% get_fields(organization, "demands").times do |e| %>
-            <% unless organization.send("demands_#{e+1}").nil? %>
+            <% unless organization.send("demands_#{e+1}").blank? %>
               <li><p><%= organization.send("demands_#{e+1}") %></p></li>
             <% end %>
           <% end %>
