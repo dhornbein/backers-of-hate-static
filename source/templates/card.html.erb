@@ -89,7 +89,7 @@
     <div class="row text-center text-sm-left">
       <div class="col-12 col-md-12">
         <h1>CEO: <%= organization.ceo %></h1>
-        <a href=<%= organization.corporate_profile.nil? ? "#" : organization.corporate_profile.url %>>
+        <a href=<%= organization.corporate_profile.nil? ? "#" : organization.corporate_profile.url %> target="_blank">
           <%= dato.static_content.full_corporate_profile_button_text %>
         </a>
       </div>
