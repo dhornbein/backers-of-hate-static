@@ -15,7 +15,9 @@
   <% dato.organizations.each_with_index do |organization,i| %>
     <div class="col-12 col-md-4 business-card">
       <div class="logo">
-        <img class="img-fluid" src="/images/logos/<%= organization.url_title %>-logo-card.jpg" alt="<%= organization.name %> logo">
+        <a href="<%= organization.url_title %>.html">
+          <img class="img-fluid" src="/images/logos/<%= organization.url_title %>-logo-card.jpg" alt="<%= organization.name %> logo">
+        </a>
       </div>
       <p class="my-4"><%= organization.summary %></p>
       <a href="<%= organization.url_title %>.html" class="btn btn-grey"><%= dato.static_content.email_trigger_button %></a>
