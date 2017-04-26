@@ -115,6 +115,11 @@ GEM
       dato (>= 0.3.2)
       dotenv
       middleman-core (>= 4.1.10)
+    middleman-google-analytics (3.0.0)
+      activesupport (>= 4.1, < 5.1)
+      erubis
+      middleman-core (>= 3.4)
+      uglifier (>= 2.5, < 4.0)
     middleman-sprockets (4.1.0)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
@@ -178,6 +183,7 @@ DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-dato
+  middleman-google-analytics (~> 3.0)
   middleman-sprockets
   pry
   rails-assets-tether (>= 1.3.3)!

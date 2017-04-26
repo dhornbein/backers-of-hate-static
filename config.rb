@@ -20,6 +20,10 @@ configure :build do
   set :http_prefix, '/backers-of-hate-static'
 end
 
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-98155490-1'
+end
+
 activate :dato
 activate :i18n, langs: dato.available_locales, mount_at_root: false
 activate :directory_indexes
