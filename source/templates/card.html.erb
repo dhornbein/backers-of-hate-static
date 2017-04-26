@@ -126,7 +126,7 @@
       url: "http://www.backersofhate.org/#{current_page.path}",
       facebook_share_title: (organization.facebook_share_title.blank? ? "" : CGI::escape(organization.facebook_share_title)),
       facebook_share_text: (organization.facebook_share_text.blank? ? "" : CGI::escape(organization.facebook_share_text)),
-      twitter_share_text: organization.twitter_share_text,
+      twitter_share_text: CGI::escape(organization.twitter_share_text),
       picture: "https://s3.amazonaws.com/www.backersofhate.org/images/boh_fb_#{locale}.png" 
     } 
   %>
