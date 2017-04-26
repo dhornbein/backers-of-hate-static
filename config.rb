@@ -20,14 +20,15 @@ configure :build do
   set :http_prefix, '/backers-of-hate-static'
 end
 
-def other_locale(locale)
-  ["en", "es"].reject{ |ele| ele == locale.to_s }.first
-end
-
 activate :dato
 activate :i18n, langs: dato.available_locales, mount_at_root: false
 activate :directory_indexes
 set :lang, :en
+
+
+def other_locale(locale)
+  ["en", "es"].reject{ |ele| ele == locale.to_s }.first
+end
 
 def org_list
   ["jpmorgan", "wellsfargo", "goldman-sachs", "boeing", "disney", "ibm", "blackrock", "uber", "blackstone"]
@@ -54,7 +55,11 @@ dato.tap do |dato|
     	proxy(
     		"#{locale}/index.html",
     		"/templates/index.html",
-    		locals: { other_locale_url: "/#{other_lang}/index.html", locale: locale },
+    		locals: { 
+          other_locale: other_lang,
+          other_locale_url: "/#{other_lang}/index.html",
+          locale: locale
+        },
     		locale: locale
     	)
 
@@ -62,7 +67,13 @@ dato.tap do |dato|
         proxy(
           "/#{locale}/#{org.url_title}.html",
           "/templates/card.html",
-          locals: { locale: locale, other_locale_url: "/#{other_lang}/#{org.url_title}.html", organization: org, whos_next: whos_next(org.url_title) },
+          locals: {
+            locale: locale,
+            other_locale: other_lang,
+            other_locale_url: "/#{other_lang}/#{org.url_title}.html",
+            organization: org,
+            whos_next: whos_next(org.url_title) 
+          },
           locale: locale
         )
       end
@@ -72,5 +83,4 @@ end
 
 ignore "templates/index.html.erb"
 ignore "templates/card.html.erb"
-
 redirect "index.html", to: "en/"
