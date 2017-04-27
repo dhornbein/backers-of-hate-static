@@ -52,17 +52,19 @@ $header-heights: (
       background-image: url('../images/boh-logo-lg-en.png');
     }
   }
-}
 
-.es {
-  @include text-hide;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin: 0;
-  height: 100%;
-  background-image: url('../images/boh-logo-sm-es.png');
-  @include media-breakpoint-up(md) {
-    background-image: url('../images/boh-logo-lg-es.png');
+  .es {
+    @include text-hide;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100%;
+    background-image: url('../images/boh-logo-sm-es.png');
+    background-size: 280px;
+    @include media-breakpoint-up(md) {
+      background-size: 700px;
+      background-image: url('../images/boh-logo-lg-es.png');
+    }
   }
 }
 

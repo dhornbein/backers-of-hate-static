@@ -29,7 +29,6 @@ activate :i18n, langs: dato.available_locales, mount_at_root: false
 activate :directory_indexes
 set :lang, :en
 
-
 def other_locale(locale)
   ["en", "es"].reject{ |ele| ele == locale.to_s }.first
 end
