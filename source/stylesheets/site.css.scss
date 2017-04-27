@@ -123,3 +123,23 @@ footer.wrap {
 .btn-outline-secondary:hover {
   color: $blush;
 }
+
+
+.language-button {
+  font-size: 22px;
+  width: 60px;
+  height: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #53535E;
+  @include media-breakpoint-down(xs) {
+    width: 60px;
+    height: 20px;
+    font-size: 16px;
+  }
+}
+
+.language-button-wrapper {
+  position: absolute;
+  left: 10px;
+  top: -55px;
+}

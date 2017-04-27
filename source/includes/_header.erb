@@ -1,4 +1,13 @@
 <header class="header">
+	<div class="language-button-wrapper">
+		<a href=<%= other_locale_url %> class="language-button">
+			<% if locale.to_s == "es" %>
+			  English
+			<% else %>
+			  Español
+			<% end %> 
+		</a>
+	</div>
   <a href=<%= "/#{locale}/index.html" %>>
 	  <div class="header-title <%= locale %>">
 	    Backers of Hate
