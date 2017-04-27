@@ -78,7 +78,11 @@
     </div>
     <div class="row" id="email">
       <div class="col-12">
-        <div id='embedForm' data-submit="<%= dato.static_content.submit_petition_text %>" data-comment="Write your letter" style='width: 100%'></div>
+        <% if locale.to_s == "es" %>
+          <div id='embedForm' data-submit=<%= dato.static_content.submit_petition_text %> data-comment="Escriba su carta" style='width: 100%'></div>
+        <% else %>
+          <div id='embedForm' data-submit=<%= dato.static_content.submit_petition_text %> data-comment="Write your letter" style='width: 100%'></div>
+        <% end %>
       </div>
     </div>
   </div>
