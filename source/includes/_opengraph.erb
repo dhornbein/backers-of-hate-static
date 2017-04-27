@@ -1,5 +1,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MaketheRoadNY">
 <meta name="twitter:title" content="Backers of Hate">
-<meta name="twitter:description" content=<%= dato.static_content.twitter_sharing_text %>>
+<% if locale.to_s == "en" %>
+	<meta name="twitter:description" content="Racism is an industry, and these 9 companies are ready to cash in. They are the #BackersofHate. Take action at www.backersofhate.org">
+<% else %>
+	<meta name="twitter:description" content="Estas 9 compañías son los patrocinadores del odio quien benefician de la agenda de Trump. #BackersofHate www.backersofhate.org/es/">
+<% end %>
 <meta name="twitter:image" content="https://s3.amazonaws.com/www.backersofhate.org/images/boh_twitter.png">
